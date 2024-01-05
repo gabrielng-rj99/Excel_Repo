@@ -1,0 +1,41 @@
+Sub RectangleRoundedCorners1_Click()
+' RectangleRoundedCorners1_Click Macro
+' Limpar os Filtros
+    
+    ChangeBevelEffect1
+    
+    ActiveWorkbook.SlicerCaches("Slicer_mês").ClearManualFilter
+    ActiveWorkbook.SlicerCaches("Slicer_Dia").ClearManualFilter
+    ActiveWorkbook.SlicerCaches("Slicer_da_Sem").ClearManualFilter
+    ActiveWorkbook.SlicerCaches("Slicer_Horário").ClearManualFilter
+
+    ChangeBevelEffect2
+    
+End Sub
+
+Sub ChangeBevelEffect1()
+    Dim shp As Shape
+    Set shp = ActiveSheet.Shapes("Limpar_Filtros_Button")  ' Replace "YourShapeName" with the actual name of your shape
+    
+    With shp
+        .ThreeD.BevelTopType = msoBevelSoftRound
+    End With
+
+    Dim startTime As Double
+    startTime = Timer              ' Pause
+    Do While Timer < startTime + 1 ' Adjust the value (1 second in this case)
+        DoEvents
+    Loop
+
+End Sub
+
+Sub ChangeBevelEffect1()
+    Dim shp As Shape
+    Set shp = ActiveSheet.Shapes("Limpar_Filtros_Button")  ' Replace "YourShapeName" with the actual name of your shape
+    
+    With shp
+        .ThreeD.BevelTopType = msoBevelCircle
+    End With
+
+End Sub
+
